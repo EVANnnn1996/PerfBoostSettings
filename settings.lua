@@ -410,8 +410,8 @@ PerfBoost.cmdtable = {
 
 				PB_CorpseRenderDist = {
 					type = "range",
-					name = "Corpse Render Distance",
-					desc = "Max distance to render corpses",
+					name = "Corpse Render Distance (see desc)",
+					desc = "Max distance to render corpses.  Won't hide corpses for units >= lvl 63 or any corpses if you have group loot, need before greed or round robin set.",
 					order = 41,
 					min = -1,
 					max = 100,
