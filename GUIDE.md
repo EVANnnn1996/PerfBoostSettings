@@ -15,6 +15,7 @@
 - If you don't want to hide players just turning off their spell effects will still be a large performance boost
 
 # 1.  Setup keybinds or a macro to turn off perf boost quickly when needed
+If you go to Esc -> Keybinds and scroll down you should see a section for PerfBoostSettings with these options:
 ![img.png](img.png)
 
 The 2 most common ways to use the keybinds:
@@ -76,4 +77,4 @@ Alternatively, if you use a normal render player distance you find it useful to 
 # 4.  Filter GUID Events
 `Filters out generally unnecessary superwow GUID-based events to reduce event spam and improve performance. Blocks events like UNIT_AURA, UNIT_HEALTH, UNIT_MANA when triggered with a guid instead of a string like 'player' or 'raid1', while preserving commonly used guid events like UNIT_COMBAT and UNIT_MODEL_CHANGED.`
 
-If you use superwow you most likely can turn this on to reduce event spam.  I think very few addons will be affected by turning this on whereas many addons are affected by the repeat event spam.  If you notice something no longer happening in one of your addons just disable this setting.
+If you use superwow you most likely can turn this on to reduce event spam.  I think very few addons will be negatively affected by turning this on whereas many addons are affected by the repeat event spam.  If you notice something no longer happening in one of your addons just disable this setting.
