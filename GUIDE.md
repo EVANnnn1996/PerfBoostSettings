@@ -16,6 +16,7 @@
 
 # 1.  Setup keybinds or a macro to turn off perf boost quickly when needed
 If you go to Esc -> Keybinds and scroll down you should see a section for PerfBoostSettings with these options:
+
 ![img.png](img.png)
 
 The 2 most common ways to use the keybinds:
