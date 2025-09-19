@@ -8,11 +8,10 @@
 # General
 - Any distance set to -1 just means it is disabled and that category won't ever be hidden.
 - Setting a distance to 0 will always hide that category
-
 - If you want different settings on different characters enable `Per character settings` otherwise settings will be shared with all your characters
 - Play around with the settings to best fit your role (tanks and healers likely don't want to hide as much stuff as ranged dps)
-
 - If you don't want to hide players just turning off their spell effects will still be a large performance boost
+- Check out the readme for more detailed information on settings and commands https://gitea.com/avitasia/PerfBoostSettings/
 
 # 1.  Setup keybinds or a macro to turn off perf boost quickly when needed
 If you go to Esc -> Keybinds and scroll down you should see a section for PerfBoostSettings with these options:
