@@ -15,12 +15,17 @@
 - If you don't want to hide players just turning off their spell effects will still be a large performance boost
 
 # 1.  Setup keybinds or a macro to turn off perf boost quickly when needed
-<img width="923" height="121" alt="image" src="https://github.com/user-attachments/assets/c073185c-37f9-4992-bdcf-f1c73b1b82d8" />
+![img.png](img.png)
+
+For most users I would recommend using "Toggle 0 player render distance" as your main on/off keybind as setting some players like tanks to always render.
 
 Or can macro these commands if you prefer
 ```
-/pbenable or /perfboostenable - Toggle performance boost on/off. Can be keybound also.
-/pbhideallplayers or /pbhap - Toggle hide all players on/off. Can be keybound also.
+- `/pbenable` or `/perfboostenable` - Toggle performance boost on/off.  Can be keybound also.
+- `/pbshowallplayers` or `/pbsap` - Toggle show all players on/off.  Can be keybound also.
+- `/pbhideallplayers` or `/pbhap` - Toggle hide all players on/off.  Can be keybound also.
+- `/pbcycleplayervisibility` or `/pbcycle` - Cycle through player visibility modes: normal → show all → hide all → repeat.  Can be keybound also.
+- `/pbtoggleplayerrenderist` or `/pbtrd` - Toggle player render distance between 0 and previous value.  Can be keybound also.
 ```
 
 # 2.  Suggested rendering settings 

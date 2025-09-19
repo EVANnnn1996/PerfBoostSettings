@@ -71,6 +71,7 @@ The addon will prioritize render distances in the following order:
 - `/pbshowallplayers` or `/pbsap` - Toggle show all players on/off.  Can be keybound also.
 - `/pbhideallplayers` or `/pbhap` - Toggle hide all players on/off.  Can be keybound also.
 - `/pbcycleplayervisibility` or `/pbcycle` - Cycle through player visibility modes: normal → show all → hide all → repeat.  Can be keybound also.
+- `/pbtoggleplayerrenderist` or `/pbtrd` - Toggle player render distance between 0 and previous value.  Can be keybound also.
 
 ### Player Render List Commands
 - `/pbalwaysrender` or `/pbar` - Add current target to always render list
