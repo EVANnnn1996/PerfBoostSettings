@@ -17,7 +17,10 @@
 # 1.  Setup keybinds or a macro to turn off perf boost quickly when needed
 ![img.png](img.png)
 
-For most users I would recommend using "Toggle 0 player render distance" as your main on/off keybind and then setting some players like tanks to always render.
+The 2 most common ways to use the keybinds:
+
+- Have all/most players shown by normally and temporarily hide everyone using "Toggle 0 player render distance" when you need the extra fps or want to be able to see better
+- Have all/most players hidden normally by setting a low player render distance and temporarily show everyone using "Toggle show all players" for fights that require it
 
 Or can macro these commands if you prefer
 ```
