@@ -17,7 +17,7 @@
 # 1.  Setup keybinds or a macro to turn off perf boost quickly when needed
 ![img.png](img.png)
 
-For most users I would recommend using "Toggle 0 player render distance" as your main on/off keybind as setting some players like tanks to always render.
+For most users I would recommend using "Toggle 0 player render distance" as your main on/off keybind and then setting some players like tanks to always render.
 
 Or can macro these commands if you prefer
 ```
@@ -46,6 +46,17 @@ Or can macro these commands if you prefer
 - Totem/Guardian distance 0 yd
 - Corpse distance 0 yd
 - In cities distance 5yd
+
+## Player whitelist/blacklist commands
+If you are using small player render distances you might find it useful to set tanks to always render.  
+Alternatively, if you use a normal render player distance you find it useful to selectively hide like characters like taurens.
+
+- `/pbalwaysrender` or `/pbar` - Add current target to always render list
+- `/pbalwaysrenderremove` or `/pbarr` - Remove current target from always render list
+- `/pbalwaysrenderclear` or `/pbarc` - Clear entire always render list
+- `/pbneverrender` or `/pbnr` - Add current target to never render list  
+- `/pbneverrenderremove` or `/pbnrr` - Remove current target from never render list
+- `/pbneverrenderclear` or `/pbnrc` - Clear entire never render list
 
 # 3.  Suggested spell visual settings 
 ## Initial Recommended
