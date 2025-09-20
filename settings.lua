@@ -10,6 +10,7 @@ PerfBoost:RegisterDB("PerfBoostSettingsDB")
 PerfBoost:RegisterDefaults("profile", {
 	per_character_settings = false,
 	previous_player_render_dist = nil,
+	previous_player_render_dist_in_combat = nil,
 })
 PerfBoost.frame = CreateFrame("Frame", "PerfBoost", UIParent)
 
@@ -854,19 +855,27 @@ end
 SLASH_PBTOGGLEPLAYERRENDERIST1, SLASH_PBTOGGLEPLAYERRENDERIST2 = '/pbtoggleplayerrenderist', '/pbtrd'
 function SlashCmdList.PBTOGGLEPLAYERRENDERIST(msg, editbox)
 	local currentDist = PerfBoost.db.profile.PB_PlayerRenderDist
+	local currentDistInCombat = PerfBoost.db.profile.PB_PlayerRenderDistInCombat
 
 	if PerfBoost.db.profile.previous_player_render_dist ~= nil then
-		-- restore previous value
+		-- restore previous values
 		local restoreValue = PerfBoost.db.profile.previous_player_render_dist
+		local restoreValueInCombat = PerfBoost.db.profile.previous_player_render_dist_in_combat
 		PerfBoost.db.profile.PB_PlayerRenderDist = restoreValue
+		PerfBoost.db.profile.PB_PlayerRenderDistInCombat = restoreValueInCombat
 		SetCVar("PB_PlayerRenderDist", tostring(restoreValue))
-		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Player render distance restored to " .. restoreValue)
+		SetCVar("PB_PlayerRenderDistInCombat", tostring(restoreValueInCombat))
+		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Player render distances restored to " .. tostring(restoreValue) .. " (normal) and " .. tostring(restoreValueInCombat) .. " (combat)")
 		PerfBoost.db.profile.previous_player_render_dist = nil
+		PerfBoost.db.profile.previous_player_render_dist_in_combat = nil
 	else
-		-- Save current value and set PB_PlayerRenderDist to 0
+		-- Save current values and set both to 0
 		PerfBoost.db.profile.previous_player_render_dist = currentDist
+		PerfBoost.db.profile.previous_player_render_dist_in_combat = currentDistInCombat
 		PerfBoost.db.profile.PB_PlayerRenderDist = 0
+		PerfBoost.db.profile.PB_PlayerRenderDistInCombat = 0
 		SetCVar("PB_PlayerRenderDist", "0")
-		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Player render distance set to 0 (saved: " .. currentDist .. ")")
+		SetCVar("PB_PlayerRenderDistInCombat", "0")
+		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Player render distances set to 0 (saved: " .. tostring(currentDist) .. " normal, " .. tostring(currentDistInCombat) .. " combat)")
 	end
 end
