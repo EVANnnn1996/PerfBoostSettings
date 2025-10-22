@@ -1,3 +1,6 @@
+# <b>If you manually download zip make sure you rename the folder after extracting to PerfBoostSettings instead of perfboostsettings or it won't work</b>
+
+
 ### PerfBoost Settings
 
 A configuration addon for the perf_boost.dll mod https://gitea.com/avitasia/perf_boost that provides an easy-to-use interface for adjusting performance optimization settings.
