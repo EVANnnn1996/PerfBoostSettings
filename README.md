@@ -53,9 +53,17 @@ A configuration addon for the perf_boost.dll mod https://gitea.com/avitasia/perf
 - **Show Other Player Aura Visuals** - Whether to show aura visual effects on players
 - **Show Unit Aura Visuals** - Whether to show aura visual effects on units (NPCs, mobs)
 - **Hide Spells for Hidden Players** - Hide spell visuals from players that are hidden due to render distance or other settings
+- **Hide Laggy Boss Spells on Others** - Curated list of spells for Sapphiron, Gnarlmoon, and Anomalus that will be hidden on other players/units. If you aren't displaying unit auras most of these will already be hidden.
 - **Always Hidden Spell IDs** - Comma-separated list of spell IDs to hide visuals for (e.g., 1234,5678)
 - **Always Shown Spell IDs** - Comma-separated list of spell IDs to always show visuals for, overriding other settings
 - **Apply Hidden Spell IDs to Me** - Whether to apply the hidden spell IDs list to your own character's spells
+- **Debug Shown Spells** - Prints to the log information about each spell being displayed
+
+**Note:** Some important debuff auras will always be shown regardless of settings:
+- Mark of the Highlord
+- Corruption of Medivh
+- Living Bomb
+- Plague
 
 ### Event Filtering
 - **Filter GUID Events** - Filters out generally unnecessary superwow GUID-based events to reduce event spam and improve performance. Blocks events like UNIT_AURA, UNIT_HEALTH, UNIT_MANA when triggered with a guid instead of a string like 'player' or 'raid1', while preserving commonly used guid events like UNIT_COMBAT and UNIT_MODEL_CHANGED.

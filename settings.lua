@@ -578,6 +578,12 @@ PerfBoost.cmdtable = {
 						end
 					end,
 				},
+
+				spacer_debug = {
+					type = "header",
+					name = " ",
+					order = 20,
+				},
 			},
 		},
 
@@ -878,4 +884,47 @@ function SlashCmdList.PBTOGGLEPLAYERRENDERIST(msg, editbox)
 		SetCVar("PB_PlayerRenderDistInCombat", "0")
 		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Player render distances set to 0 (saved: " .. tostring(currentDist) .. " normal, " .. tostring(currentDistInCombat) .. " combat)")
 	end
+end
+
+-- Conditionally add new CVars if they exist (for compatibility with older DLL versions)
+local has_laggy_boss_spells = pcall(GetCVar, "PB_HideLaggyBossSpellsOnOthers")
+if has_laggy_boss_spells then
+	PerfBoost.cmdtable.args.spells.args.PB_HideLaggyBossSpellsOnOthers = {
+		type = "toggle",
+		name = "Hide Laggy Boss Spells on Others",
+		desc = "Curated list of spells for Sapphiron, Gnarlmoon, and Anomalus that will be hidden on other players/units. If you aren't displaying unit auras most of these will already be hidden.",
+		order = 6,
+		get = function()
+			return GetCVar("PB_HideLaggyBossSpellsOnOthers") == "1"
+		end,
+		set = function(v)
+			PerfBoost.db.profile.PB_HideLaggyBossSpellsOnOthers = v
+			if v == true then
+				SetCVar("PB_HideLaggyBossSpellsOnOthers", "1")
+			else
+				SetCVar("PB_HideLaggyBossSpellsOnOthers", "0")
+			end
+		end,
+	}
+end
+
+local has_debug_shown_spells = pcall(GetCVar, "PB_DebugShownSpells")
+if has_debug_shown_spells then
+	PerfBoost.cmdtable.args.spells.args.PB_DebugShownSpells = {
+		type = "toggle",
+		name = "Debug Shown Spells",
+		desc = "Prints to the log information about each spell being displayed.",
+		order = 21,
+		get = function()
+			return GetCVar("PB_DebugShownSpells") == "1"
+		end,
+		set = function(v)
+			PerfBoost.db.profile.PB_DebugShownSpells = v
+			if v == true then
+				SetCVar("PB_DebugShownSpells", "1")
+			else
+				SetCVar("PB_DebugShownSpells", "0")
+			end
+		end,
+	}
 end
