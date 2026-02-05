@@ -928,3 +928,24 @@ if has_debug_shown_spells then
 		end,
 	}
 end
+
+local has_doodad_render_dist = pcall(GetCVar, "PB_DoodadRenderDist")
+if has_doodad_render_dist then
+	PerfBoost.cmdtable.args.rendering.args.PB_DoodadRenderDist = {
+		type = "range",
+		name = "Doodad/Game Object Render Distance",
+		desc = "Max distance to render doodads. Interactable game objects (chests, doors, quest objects, etc.) are not hidden.",
+		order = 42,
+		min = -1,
+		max = 100,
+		step = 1,
+		get = function()
+			local val = GetCVar("PB_DoodadRenderDist")
+			return val and tonumber(val) or 0
+		end,
+		set = function(v)
+			PerfBoost.db.profile.PB_DoodadRenderDist = v
+			SetCVar("PB_DoodadRenderDist", tostring(v))
+		end,
+	}
+end

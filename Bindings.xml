@@ -1,5 +1,4 @@
 <Bindings>
-
 	<Binding name="PERFBOOSTENABLE" header="PERFBOOST">
 		SlashCmdList.PBENABLE()
 	</Binding>
@@ -7,7 +6,6 @@
 	<Binding name="PBHIDEALLPLAYERS" header="PERFBOOST">
 		SlashCmdList.PBHIDEALLPLAYERS()
 	</Binding>
-
 
 	<Binding name="PBTOGGLEPLAYERRENDERIST" header="PERFBOOST">
 		SlashCmdList.PBTOGGLEPLAYERRENDERIST()
@@ -20,6 +18,5 @@
 	<Binding name="PBCYCLEPLAYERVISIBILITY" header="PERFBOOST">
 		SlashCmdList.PBCYCLEPLAYERVISIBILITY()
 	</Binding>
-
 
 </Bindings>

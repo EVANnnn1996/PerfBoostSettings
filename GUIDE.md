@@ -21,7 +21,7 @@ If you go to Esc -> Keybinds and scroll down you should see a section for PerfBo
 The 2 most common ways to use the keybinds:
 
 - Have all/most players shown by default and temporarily hide everyone using "Toggle 0 player render distance" when you need the extra fps or want to be able to see better
-- Have all/most players hidden by default using a low player render distance and temporarily show everyone using "Toggle show all players" for fights that require it
+- Have all/most players hidden by default using a low player render distance and temporarily show everyone using "Toggle show all players" for fights that require it.
 
 Or can macro these commands if you prefer
 ```
@@ -41,6 +41,7 @@ Or can macro these commands if you prefer
 - Totem/Guardian distance 0 yd
 - Corpse distance 0 yd
 - In cities distance 5yd
+- Doodad render distance 60yd
 
 ## Max Performance
 - Set either Default or In combat (when most people suffer fps drops) player render distance to 0 yd
@@ -50,6 +51,7 @@ Or can macro these commands if you prefer
 - Totem/Guardian distance 0 yd
 - Corpse distance 0 yd
 - In cities distance 5yd
+- Doodad render distance 15yd
 
 ## Player whitelist/blacklist commands
 If you are using small player render distances you might find it useful to set tanks to always render.  

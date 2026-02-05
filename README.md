@@ -46,6 +46,7 @@ A configuration addon for the perf_boost.dll mod https://gitea.com/avitasia/perf
 
 ### Other Rendering
 - **Corpse Render Distance** - Max distance to render corpses (-1 to disable, 0-100 yards)
+- **Doodad Render Distance** - Max distance to render doodads (trees, crates, lamps, etc.). Interactable game objects are not hidden. (-1 to disable, 0-100 yards)
 
 ### Spell Visual Settings
 - **Show Other Player Spell Visuals** - Whether to show spell visual effects from other players (spell casts, ranged weapon projectiles, wanding, etc.)
