@@ -934,7 +934,7 @@ if has_doodad_render_dist then
 	PerfBoost.cmdtable.args.rendering.args.PB_DoodadRenderDist = {
 		type = "range",
 		name = "Doodad/Game Object Render Distance",
-		desc = "Max distance to render doodads. Interactable game objects (chests, doors, quest objects, etc.) are not hidden.",
+		desc = "Max distance to render doodads. Interactable game objects (chests, doors, quest objects, etc.) are not hidden. Ignored if you are PvP flagged.",
 		order = 42,
 		min = -1,
 		max = 100,

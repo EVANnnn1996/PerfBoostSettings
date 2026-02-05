@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Title: Perf_boost Settings v1.9.0
+## Title: Perf_boost Settings v1.9.1
 ## Notes: the companion compatibility addon to the mod of the same name.
 ## SavedVariablesPerCharacter: PerfBoostSettingsDB
 ## X-Embeds: Ace2, FuBarPlugin-2.0, CompostLib, DewDropLib, TabletLib
