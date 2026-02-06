@@ -19,4 +19,8 @@
 		SlashCmdList.PBCYCLEPLAYERVISIBILITY()
 	</Binding>
 
+	<Binding name="PBCYCLEDOODADVISIBILITY" header="PERFBOOST">
+		SlashCmdList.PBCYCLEDOODADVISIBILITY()
+	</Binding>
+
 </Bindings>

@@ -11,6 +11,7 @@ PerfBoost:RegisterDefaults("profile", {
 	per_character_settings = false,
 	previous_player_render_dist = nil,
 	previous_player_render_dist_in_combat = nil,
+	previous_doodad_render_dist = nil,
 })
 PerfBoost.frame = CreateFrame("Frame", "PerfBoost", UIParent)
 
@@ -20,6 +21,7 @@ BINDING_NAME_PBHIDEALLPLAYERS = "Toggle hide all players (overrides other settin
 BINDING_NAME_PBTOGGLEPLAYERRENDERIST = "Toggle 0 player render distance (hides all players respecting other settings)";
 BINDING_NAME_PBSHOWALLPLAYERS = "Toggle show all players (overrides other settings)";
 BINDING_NAME_PBCYCLEPLAYERVISIBILITY = "Cycle player visibility: show all -> hide all -> normal";
+BINDING_NAME_PBCYCLEDOODADVISIBILITY = "Cycle doodad visibility: current -> hidden -> always render";
 
 -- used when turning on per character settings
 function PerfBoost:SavePerCharacterSettings()
@@ -883,6 +885,37 @@ function SlashCmdList.PBTOGGLEPLAYERRENDERIST(msg, editbox)
 		SetCVar("PB_PlayerRenderDist", "0")
 		SetCVar("PB_PlayerRenderDistInCombat", "0")
 		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Player render distances set to 0 (saved: " .. tostring(currentDist) .. " normal, " .. tostring(currentDistInCombat) .. " combat)")
+	end
+end
+
+SLASH_PBCYCLEDOODADVISIBILITY1, SLASH_PBCYCLEDOODADVISIBILITY2 = '/pbcycledoodadvisibility', '/pbcycledoodads'
+function SlashCmdList.PBCYCLEDOODADVISIBILITY(msg, editbox)
+	local has_doodad = pcall(GetCVar, "PB_DoodadRenderDist")
+	if not has_doodad then
+		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r PB_DoodadRenderDist not available")
+		return
+	end
+
+	local currentDist = tonumber(GetCVar("PB_DoodadRenderDist")) or 0
+
+	if PerfBoost.db.profile.previous_doodad_render_dist == nil then
+		-- Normal -> 0 (hide doodads)
+		PerfBoost.db.profile.previous_doodad_render_dist = currentDist
+		PerfBoost.db.profile.PB_DoodadRenderDist = 0
+		SetCVar("PB_DoodadRenderDist", "0")
+		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Doodad render distance set to 0 (hidden)")
+	elseif currentDist == 0 then
+		-- 0 -> -1 (always render)
+		PerfBoost.db.profile.PB_DoodadRenderDist = -1
+		SetCVar("PB_DoodadRenderDist", "-1")
+		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Doodad render distance set to -1 (always render)")
+	else
+		-- -1 (or any other state) -> restore previous
+		local restoreValue = PerfBoost.db.profile.previous_doodad_render_dist
+		PerfBoost.db.profile.PB_DoodadRenderDist = restoreValue
+		SetCVar("PB_DoodadRenderDist", tostring(restoreValue))
+		DEFAULT_CHAT_FRAME:AddMessage("|cffffcc00PerfBoost:|r Doodad render distance restored to " .. tostring(restoreValue))
+		PerfBoost.db.profile.previous_doodad_render_dist = nil
 	end
 end
 
