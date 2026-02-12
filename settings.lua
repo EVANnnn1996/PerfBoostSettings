@@ -980,5 +980,26 @@ if has_doodad_render_dist then
 			PerfBoost.db.profile.PB_DoodadRenderDist = v
 			SetCVar("PB_DoodadRenderDist", tostring(v))
 		end,
+		}
+end
+
+local has_doodad_render_dist_in_cities_and_raids = pcall(GetCVar, "PB_DoodadRenderDistInCitiesAndRaids")
+if has_doodad_render_dist_in_cities_and_raids then
+	PerfBoost.cmdtable.args.rendering.args.PB_DoodadRenderDistInCitiesAndRaids = {
+		type = "range",
+		name = "Doodad/Game Object Render Distance in Cities and Raids",
+		desc = "Max distance to render doodads while in cities and 40 man raids.  Takes priority.  Interactable game objects (chests, doors, quest objects, etc.) are not hidden. Ignored if you are PvP flagged.",
+		order = 43,
+		min = -1,
+		max = 100,
+		step = 1,
+		get = function()
+			local val = GetCVar("PB_DoodadRenderDistInCitiesAndRaids")
+			return val and tonumber(val) or 0
+		end,
+		set = function(v)
+			PerfBoost.db.profile.PB_DoodadRenderDistInCitiesAndRaids = v
+			SetCVar("PB_DoodadRenderDistInCitiesAndRaids", tostring(v))
+		end,
 	}
 end
