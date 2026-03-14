@@ -66,9 +66,6 @@ A configuration addon for the perf_boost.dll mod https://gitea.com/avitasia/perf
 - Living Bomb
 - Plague
 
-### Event Filtering
-- **Filter GUID Events** - Filters out generally unnecessary superwow GUID-based events to reduce event spam and improve performance. Blocks events like UNIT_AURA, UNIT_HEALTH, UNIT_MANA when triggered with a guid instead of a string like 'player' or 'raid1', while preserving commonly used guid events like UNIT_COMBAT and UNIT_MODEL_CHANGED.
-
 ## Distance Priority
 
 The addon will prioritize render distances in the following order:
